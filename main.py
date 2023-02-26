@@ -13,7 +13,6 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # print_hi('PyCharm')
-    print(readData.time_Series_Intraday())
-    print(readData.time_Series_Intraday_Extended())
+    print(readData.alpha_Intelligence.winning_Portfolio())
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

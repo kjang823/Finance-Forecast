@@ -9,6 +9,9 @@ copy paste the API key into the text file.
 NOTE: most comments with print statements are meant for debugging purposes. 
 NOTE: There are no API calls made for Premium features. The list of these features includes:
         TIME_SERIES_DAILY
+        FOREX_INTRADAY
+        CRYPTOCURRENCIES_INTRADAY
+        
 """
 
 api_File = open('APIKEY', 'r')
@@ -203,6 +206,35 @@ class forex:
         return data
 
 class cryptocurrencies:
+    def crypto_Exchange_Rates(self):
+        url = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=CNY&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def crypto_Daily(self):
+        url = 'https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=CNY&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def crypto_Weekly(self):
+        url = 'https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_WEEKLY&symbol=BTC&market=CNY&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def crypto_Monthly(self):
+        url = 'https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_MONTHLY&symbol=BTC&market=CNY&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+class commodoties:
 
     def crude_Oil_WTI(self):
         url = 'https://www.alphavantage.co/query?function=WTI&interval=monthly&apikey=demo'
@@ -281,9 +313,145 @@ class cryptocurrencies:
         data = r.json()
         return data
 
-def federal_Funds_Rate():
-    url = 'https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=monthly&apikey=demo'
-    url = url.replace("demo", api_String)
-    r = requests.get(url)
-    data = r.json()
-    return data
+class economic_Indicators:
+    def real_GDP(self):
+        url = 'https://www.alphavantage.co/query?function=REAL_GDP&interval=annual&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def real_GDP_Per_Capita(self):
+        url = 'https://www.alphavantage.co/query?function=REAL_GDP_PER_CAPITA&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def treasury_Yield(self):
+        url = 'https://www.alphavantage.co/query?function=TREASURY_YIELD&interval=monthly&maturity=10year&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def federal_Funds_Rate(self):
+        url = 'https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=monthly&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def consumer_Price_Index(self):
+        url = 'https://www.alphavantage.co/query?function=CPI&interval=monthly&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def inflation_Rates(self):
+        url = 'https://www.alphavantage.co/query?function=INFLATION&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def retail_Sales(self):
+        url = 'https://www.alphavantage.co/query?function=RETAIL_SALES&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def durables(self):
+        url = 'https://www.alphavantage.co/query?function=DURABLES&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def unemployment_Rates(self):
+        url = 'https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def total_Non_Farm_Payroll(self):
+        url = 'https://www.alphavantage.co/query?function=NONFARM_PAYROLL&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+class technical_Indicators:
+
+    def simple_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=SMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def exponential_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=EMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def weighted_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=WMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def double_Exponential_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=DEMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def triple_Exponential_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=TEMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def triangular_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=TRIMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def kaufman_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=KAMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def mesa_Adaptive_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=MAMA&symbol=IBM&interval=daily&series_type=close&fastlimit=0.02&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def voluma_Weighted_Average_Price(self):
+        url = 'https://www.alphavantage.co/query?function=VWAP&symbol=IBM&interval=15min&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
+
+    def triple_Exponential_Moving_Average(self):
+        url = 'https://www.alphavantage.co/query?function=T3&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo'
+        url = url.replace("demo", api_String)
+        r = requests.get(url)
+        data = r.json()
+        return data
