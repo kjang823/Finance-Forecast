@@ -6,13 +6,8 @@ Once you have generated your API key, simply create a text file within the same 
 copy paste the API key into the text file.
 NOTE: most comments with print statements are meant for debugging purposes.
 NOTE: There are no API calls made for Premium features. The list of these features includes:
-        TIME_SERIES_DAILY
         FOREX_INTRADAY
-        CRYPTOCURRENCIES_INTRADAY
-        TECHNICAL_INDICATORS_STOCHASTIC_OSCILLATOR
-        TECHNICAL_INDICATORS_RELATIVE_STRENGTH_INDEX
-        TECHNICAL_INDICATORS_AVERAGE_DIRECTIONAL_MOVEMENT_INDEX
-        TECHNICAL_INDICATORS_COMMODITY_CHANNEL_INDEX_VALUES
+
 """
 
 import requests
